@@ -15,15 +15,15 @@
  */
 
 (function($){
-    
+
     var paginate = {
-        startPos: function(pageNumber, perPage) {
+        startPos: function startPos(pageNumber, perPage) {
             // determine what array position to start from
             // based on current page and # per page
             return pageNumber * perPage;
         },
 
-        getPage: function(items, startPos, perPage) {
+        getPage: function getPage(items, startPos, perPage) {
             // declare an empty array to hold our page items
             var page = [];
 
@@ -37,12 +37,12 @@
             return page;
         },
 
-        totalPages: function(items, perPage) {
+        totalPages: function totalPages(items, perPage) {
             // determine total number of pages
             return Math.ceil(items.length / perPage);
         },
 
-        createBtns: function(totalPages, currentPage) {
+        createBtns: function createBtns(totalPages, currentPage) {
             // create buttons to manipulate current page
             var pagination = $('<div class="pagination" />');
 
@@ -88,7 +88,7 @@
             return pagination;
         },
 
-        createPage: function(items, currentPage, perPage) {
+        createPage: function createPage(items, currentPage, perPage) {
             // remove pagination from the page
             $('.pagination').remove();
 
@@ -116,7 +116,7 @@
     };
 
     // stuff it all into a jQuery method!
-    $.fn.paginate = function(perPage) {
+    $.fn.paginate = function paginate(perPage) {
         var items = $(this);
 
         // default perPage to 5
